@@ -1,0 +1,33 @@
+{
+    "name": "cdcchen/curl-client",
+    "description": "curl oop",
+    "keywords": ["http", "httpclient", "curl", "curlclient", "phphttp"],
+    "homepage": "https://github.com/cdcchen/image-url-maker",
+    "time": "2016-12-13 19:17:01",
+    "license": "BSD-4-Clause",
+    "support": {
+        "issues": "https://github.com/cdcchen/image-url-maker/issues",
+        "wiki": "https://github.com/cdcchen/image-url-maker/wiki",
+        "source": "https://github.com/cdcchen/image-url-maker"
+    },
+    "authors": [
+        {
+            "name": "Dong Chen",
+            "email": "cdcchen@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ImageUrlMaker\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+          "dev-master": "1.0.x-dev"
+        }
+    }
+}
