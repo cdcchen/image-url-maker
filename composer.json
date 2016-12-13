@@ -1,7 +1,7 @@
 {
     "name": "cdcchen/image-url-maker",
-    "description": "curl oop",
-    "keywords": ["http", "httpclient", "curl", "curlclient", "phphttp"],
+    "description": "Cloud image url maker",
+    "keywords": ["image", "cloud image", "url maker", "oss", "upyun", "qiniu"],
     "homepage": "https://github.com/cdcchen/image-url-maker",
     "time": "2016-12-13 19:17:01",
     "license": "BSD-4-Clause",
