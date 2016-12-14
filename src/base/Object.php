@@ -31,5 +31,4 @@ class Object
     {
         return method_exists($this, $name);
     }
-
 }

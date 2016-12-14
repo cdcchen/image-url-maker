@@ -15,7 +15,7 @@ use ImageUrlMaker\base\ParamsTrait;
 
 /**
  * Class Watermark
- * @package ImageUrlMaker
+ * @package ImageUrlMaker\oss
  */
 abstract class Watermark extends Object
 {

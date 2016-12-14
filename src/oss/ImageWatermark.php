@@ -11,7 +11,7 @@ namespace ImageUrlMaker\oss;
 
 /**
  * Class ImageWatermark
- * @package cdcchen\upyun
+ * @package ImageUrlMaker\oss
  */
 class ImageWatermark extends Watermark
 {

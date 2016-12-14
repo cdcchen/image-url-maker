@@ -25,9 +25,13 @@ trait ParamsTrait
      * @param mixed $value
      * @return $this
      */
-    public function setParam($name, $value)
+    public function setParam($name, $value = null)
     {
-        $this->_params[$name] = $value;
+        if ($value === null) {
+            $this->_params[] = $name;
+        } else {
+            $this->_params[$name] = $value;
+        }
         return $this;
     }
 

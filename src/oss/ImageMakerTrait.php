@@ -11,14 +11,14 @@ namespace ImageUrlMaker\oss;
 
 /**
  * Class ImageMakerTrait
- * @package cdcchen\upyun
+ * @package ImageUrlMaker\oss
  */
 trait ImageMakerTrait
 {
     public static function rangeValidate($name, $value, $start, $end)
     {
-        if ($start < $start || $value > $end) {
-            throw new \InvalidArgumentException("{$name}: {$value} is not between {$start} and {$end}.");
+        if ($value < $start || $value > $end) {
+            throw new \RangeException("{$name}: {$value} is not between {$start} and {$end}.");
         }
     }
 
