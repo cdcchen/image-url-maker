@@ -116,7 +116,7 @@ class MakerSpec extends ObjectBehavior
     {
         $this->beConstructedWith(self::IMAGE_URL);
         $excepted = self::IMAGE_URL . self::DELIMITER . 'image/crop,w_100,h_200,x_10,y_20,g_center';
-        $this->crop(100, 200, 10, 20, Maker::ALIGN_CENTER)->getUrl()->shouldBeLike($excepted);
+        $this->crop(100, 200, 10, 20, Maker::POSITION_CENTER)->getUrl()->shouldBeLike($excepted);
     }
 
     public function it_is_index_corp_x_throw()

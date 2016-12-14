@@ -23,15 +23,15 @@ class Maker extends Object implements MakerInterface
 {
     use ParamsTrait, BoolToStringTrait, ImageMakerTrait;
 
-    const ALIGN_NORTHWEST = 'nw';
-    const ALIGN_NORTH     = 'north';
-    const ALIGN_NORTHEAST = 'ne';
-    const ALIGN_EAST      = 'east';
-    const ALIGN_SOUTHEAST = 'se';
-    const ALIGN_SOUTH     = 'south';
-    const ALIGN_SOUTHWEST = 'sw';
-    const ALIGN_WEST      = 'west';
-    const ALIGN_CENTER    = 'center';
+    const POSITION_NORTHWEST = 'nw';
+    const POSITION_NORTH     = 'north';
+    const POSITION_NORTHEAST = 'ne';
+    const POSITION_EAST      = 'east';
+    const POSITION_SOUTHEAST = 'se';
+    const POSITION_SOUTH     = 'south';
+    const POSITION_SOUTHWEST = 'sw';
+    const POSITION_WEST      = 'west';
+    const POSITION_CENTER    = 'center';
 
     /**
      * @var string image thumb styleName
@@ -84,18 +84,18 @@ class Maker extends Object implements MakerInterface
     /**
      * @return array
      */
-    public static function aligns()
+    public static function positions()
     {
         return [
-            self::ALIGN_CENTER,
-            self::ALIGN_EAST,
-            self::ALIGN_NORTH,
-            self::ALIGN_NORTHEAST,
-            self::ALIGN_NORTHWEST,
-            self::ALIGN_SOUTH,
-            self::ALIGN_SOUTHEAST,
-            self::ALIGN_SOUTHWEST,
-            self::ALIGN_WEST
+            self::POSITION_CENTER,
+            self::POSITION_EAST,
+            self::POSITION_NORTH,
+            self::POSITION_NORTHEAST,
+            self::POSITION_NORTHWEST,
+            self::POSITION_SOUTH,
+            self::POSITION_SOUTHEAST,
+            self::POSITION_SOUTHWEST,
+            self::POSITION_WEST
         ];
     }
 
@@ -349,7 +349,7 @@ class Maker extends Object implements MakerInterface
         if ($y > 0) {
             $values[] = 'y_' . $y;
         }
-        if (!empty($g) && in_array($g, static::aligns())) {
+        if (!empty($g) && in_array($g, static::positions())) {
             $values[] = 'g_' . $g;
         }
 
