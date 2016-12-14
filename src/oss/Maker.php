@@ -388,6 +388,9 @@ class Maker extends Object implements MakerInterface
         return $this->setParam('indexcrop', "y_{$height},i_{$i}");
     }
 
+
+    ##################### rotate #####################
+
     /**
      * @param int $value
      * @return $this
