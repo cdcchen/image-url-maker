@@ -299,7 +299,7 @@ class MakerSpec extends ObjectBehavior
 
 
 
-    public function it_is_test()
+    public function not_it_is_test()
     {
         echo PHP_EOL;
         $maker = new Maker('http://ydbcdn.oss-cn-hangzhou.aliyuncs.com/5.jpg');

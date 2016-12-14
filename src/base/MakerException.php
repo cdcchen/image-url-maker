@@ -9,6 +9,10 @@
 namespace ImageUrlMaker\base;
 
 
+/**
+ * Class MakerException
+ * @package ImageUrlMaker\base
+ */
 class MakerException extends \Exception
 {
 

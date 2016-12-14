@@ -45,7 +45,9 @@ class Maker extends Object implements MakerInterface
      * @var string
      */
     protected $styleDelimiter = '!';
-
+    /**
+     * @var string
+     */
     protected $processDelimiter = '?x-oss-process=image/';
     /**
      * @var array
@@ -152,7 +154,7 @@ class Maker extends Object implements MakerInterface
      * @param int $height
      * @param null|int $limit Value: 0 or 1
      * @param null|string $color Value range: 000000 - FFFFFF
-     * @return $this
+     * @return static
      */
     public function resize($mode = null, $width = 0, $height = 0, $limit = null, $color = null)
     {
@@ -180,61 +182,123 @@ class Maker extends Object implements MakerInterface
         return $this->setParam('resize', join(',', $values));
     }
 
+    /**
+     * @param int $width
+     * @param int $height
+     * @param null $limit
+     * @return $this
+     */
     public function resizeFitMax($width = 0, $height = 0, $limit = null)
     {
         return $this->resize('lfit', $width, $height, $limit);
     }
 
+    /**
+     * @param int $width
+     * @param int $height
+     * @param null $limit
+     * @return $this
+     */
     public function resizeFitMin($width = 0, $height = 0, $limit = null)
     {
         return $this->resize('mfit', $width, $height, $limit);
     }
 
+    /**
+     * @param int $width
+     * @param int $height
+     * @param null $limit
+     * @return $this
+     */
     public function resizeFill($width = 0, $height = 0, $limit = null)
     {
         return $this->resize('fill', $width, $height, $limit);
     }
 
+    /**
+     * @param int $width
+     * @param int $height
+     * @param null $limit
+     * @param null $color
+     * @return $this
+     */
     public function resizePad($width = 0, $height = 0, $limit = null, $color = null)
     {
         return $this->resize('pad', $width, $height, $limit, $color);
     }
 
+    /**
+     * @param int $width
+     * @param int $height
+     * @param null|int $limit 0 or 1
+     * @return $this
+     */
     public function resizeFixed($width = 0, $height = 0, $limit = null)
     {
         return $this->resize('fixed', $width, $height, $limit);
     }
 
+    /**
+     * @param int $width
+     * @param int $height
+     * @return $this
+     */
     public function fitMaxSize($width = 0, $height = 0)
     {
         return $this->resizeFitMin($width, $height);
     }
 
+    /**
+     * @param int $width
+     * @param int $height
+     * @return $this
+     */
     public function fitMinSize($width = 0, $height = 0)
     {
         return $this->resizeFitMax($width, $height);
     }
 
+    /**
+     * @param int $width
+     * @return $this
+     */
     public function fitWidth($width)
     {
         return $this->resizeFitMax($width);
     }
 
+    /**
+     * @param int $height
+     * @return $this
+     */
     public function fitHeight($height)
     {
         return $this->resizeFitMax(0, $height);
     }
 
+    /**
+     * @param int $width
+     * @param int $height
+     * @return $this
+     */
     public function fixedSize($width = 0, $height = 0)
     {
         return $this->resizeFixed($width, $height);
     }
 
+    /**
+     * @param int $width
+     * @return $this
+     */
     public function fixedWidth($width)
     {
         return $this->resizeFixed($width);
     }
 
+    /**
+     * @param int $height
+     * @return $this
+     */
     public function fixedHeight($height)
     {
         return $this->resizeFixed(0, $height);
@@ -243,17 +307,33 @@ class Maker extends Object implements MakerInterface
 
     ################## crop ######################
 
+    /**
+     * @param int $radius
+     * @return $this
+     */
     public function circle($radius)
     {
         return $this->setParam('circle', 'r_' . $radius);
     }
 
+    /**
+     * @param int $radius
+     * @return $this
+     */
     public function roundedCorners($radius)
     {
         static::rangeValidate('Radius', $radius, 1, 4096);
         return $this->setParam('rounded-corners', 'r_' . $radius);
     }
 
+    /**
+     * @param int $width
+     * @param int $height
+     * @param int $x
+     * @param int $y
+     * @param null|string $g
+     * @return $this
+     */
     public function crop($width = 0, $height = 0, $x = 0, $y = 0, $g = null)
     {
         $values = [];
@@ -280,6 +360,11 @@ class Maker extends Object implements MakerInterface
         return $this;
     }
 
+    /**
+     * @param int $width
+     * @param int $i
+     * @return $this
+     */
     public function indexCropX($width, $i = 0)
     {
         if ($width <= 0) {
@@ -289,6 +374,11 @@ class Maker extends Object implements MakerInterface
         return $this->setParam('indexcrop', "x_{$width},i_{$i}");
     }
 
+    /**
+     * @param int $height
+     * @param int $i
+     * @return $this
+     */
     public function indexCropY($height, $i = 0)
     {
         if ($height <= 0) {
@@ -298,12 +388,20 @@ class Maker extends Object implements MakerInterface
         return $this->setParam('indexcrop', "y_{$height},i_{$i}");
     }
 
+    /**
+     * @param int $value
+     * @return $this
+     */
     public function autoOrient($value = 1)
     {
         static::rangeValidate('Value', $value, 0, 1);
         return $this->setParam('auto-orient', $value);
     }
 
+    /**
+     * @param int $angle
+     * @return $this
+     */
     public function rotate($angle)
     {
         static::rangeValidate('Angle', $angle, 0, 360);
@@ -313,6 +411,11 @@ class Maker extends Object implements MakerInterface
 
     ################## effects #####################
 
+    /**
+     * @param int $radius
+     * @param int $sigma
+     * @return $this
+     */
     public function blur($radius, $sigma)
     {
         static::rangeValidate('Radius', $radius, 1, 50);
@@ -320,18 +423,30 @@ class Maker extends Object implements MakerInterface
         return $this->setParam('blur', "r_{$radius},s_{$sigma}");
     }
 
+    /**
+     * @param int $value
+     * @return $this
+     */
     public function bright($value)
     {
         static::rangeValidate('Value', $value, 1, 50);
         return $this->setParam('bright', $value);
     }
 
+    /**
+     * @param int $value
+     * @return $this
+     */
     public function contrast($value)
     {
         static::rangeValidate('Value', $value, -100, 100);
         return $this->setParam('contrast', $value);
     }
 
+    /**
+     * @param int $value
+     * @return $this
+     */
     public function sharpen($value = 100)
     {
         static::rangeValidate('Value', $value, 50, 399);
@@ -361,6 +476,10 @@ class Maker extends Object implements MakerInterface
         return $this;
     }
 
+    /**
+     * @param bool $value
+     * @return $this
+     */
     public function interlace($value = true)
     {
         return $this->setParam('interlace', $value ? 1 : 0);
@@ -404,6 +523,4 @@ class Maker extends Object implements MakerInterface
     {
         return $this->getUrl();
     }
-
-
 }

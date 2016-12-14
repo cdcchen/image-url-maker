@@ -11,7 +11,7 @@ namespace ImageUrlMaker\base;
 
 /**
  * Class ParamsTrait
- * @package cdcchen\upyun
+ * @package ImageUrlMaker\base
  */
 trait ParamsTrait
 {
@@ -36,7 +36,7 @@ trait ParamsTrait
     }
 
     /**
-     * @param $name
+     * @param string $name
      * @return null|mixed
      */
     public function getParam($name)
@@ -45,10 +45,10 @@ trait ParamsTrait
     }
 
     /**
-     * @param $params
+     * @param array $params
      * @return $this
      */
-    public function setParams($params)
+    public function setParams(array $params)
     {
         foreach ($params as $name => $value) {
             $this->setParam($name, $value);
@@ -57,6 +57,9 @@ trait ParamsTrait
         return $this;
     }
 
+    /**
+     * @return array
+     */
     public function getParams()
     {
         return $this->_params;
