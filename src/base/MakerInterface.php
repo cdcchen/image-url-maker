@@ -25,26 +25,26 @@ interface MakerInterface
      * @param int $height
      * @return static
      */
-    public function fitMaxSize($width = 0, $height = 0);
-
-    /**
-     * @param int $width
-     * @param int $height
-     * @return static
-     */
     public function fitMinSize($width = 0, $height = 0);
 
     /**
      * @param int $width
+     * @param int $height
      * @return static
      */
-    public function fitWidth($width);
+    public function fitMaxSize($width = 0, $height = 0);
+
+    /**
+     * @param int $width
+     * @return static
+     */
+    public function fitByWidth($width);
 
     /**
      * @param int $height
      * @return static
      */
-    public function fitHeight($height);
+    public function fitByHeight($height);
 
     /**
      * @param int $width

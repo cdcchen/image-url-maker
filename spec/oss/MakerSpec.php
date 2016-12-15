@@ -41,14 +41,14 @@ class MakerSpec extends ObjectBehavior
 
     public function it_is_fit_max_size()
     {
-        $excepted = self::IMAGE_URL . self::DELIMITER . 'image/resize,m_mfit,w_200,h_300';
+        $excepted = self::IMAGE_URL . self::DELIMITER . 'image/resize,m_lfit,w_200,h_300';
         $this->beConstructedWith(self::IMAGE_URL);
         $this->fitMaxSize(200, 300)->getUrl()->shouldBeLike($excepted);
     }
 
     public function it_is_fit_min_size()
     {
-        $excepted = self::IMAGE_URL . self::DELIMITER . 'image/resize,m_lfit,w_200,h_300';
+        $excepted = self::IMAGE_URL . self::DELIMITER . 'image/resize,m_mfit,w_200,h_300';
         $this->beConstructedWith(self::IMAGE_URL);
         $this->fitMinSize(200, 300)->getUrl()->shouldBeLike($excepted);
     }
@@ -57,14 +57,14 @@ class MakerSpec extends ObjectBehavior
     {
         $excepted = self::IMAGE_URL . self::DELIMITER . 'image/resize,m_lfit,w_200';
         $this->beConstructedWith(self::IMAGE_URL);
-        $this->fitWidth(200)->getUrl()->shouldBeLike($excepted);
+        $this->fitByWidth(200)->getUrl()->shouldBeLike($excepted);
     }
 
     public function it_is_fit_height()
     {
         $excepted = self::IMAGE_URL . self::DELIMITER . 'image/resize,m_lfit,h_200';
         $this->beConstructedWith(self::IMAGE_URL);
-        $this->fitHeight(200)->getUrl()->shouldBeLike($excepted);
+        $this->fitByHeight(200)->getUrl()->shouldBeLike($excepted);
     }
 
     public function it_is_fixed_size()
@@ -303,8 +303,8 @@ class MakerSpec extends ObjectBehavior
     {
         echo PHP_EOL;
         $maker = new Maker('http://ydbcdn.oss-cn-hangzhou.aliyuncs.com/5.jpg');
-        echo $maker->fitWidth(200)->getUrl(), PHP_EOL;
-        echo $maker->fitHeight(200)->getUrl(), PHP_EOL;
+        echo $maker->fitByWidth(200)->getUrl(), PHP_EOL;
+        echo $maker->fitByHeight(200)->getUrl(), PHP_EOL;
         echo $maker->circle(200)->getUrl(), PHP_EOL;
         echo $maker->format(ImageFormat::JPG, true)->getUrl(), PHP_EOL;
         echo $maker->quality(90, 0)->getUrl(), PHP_EOL;

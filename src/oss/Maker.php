@@ -188,7 +188,7 @@ class Maker extends Object implements MakerInterface
      * @param null $limit
      * @return $this
      */
-    public function resizeFitMax($width = 0, $height = 0, $limit = null)
+    public function resizeLFit($width = 0, $height = 0, $limit = null)
     {
         return $this->resize('lfit', $width, $height, $limit);
     }
@@ -199,7 +199,7 @@ class Maker extends Object implements MakerInterface
      * @param null $limit
      * @return $this
      */
-    public function resizeFitMin($width = 0, $height = 0, $limit = null)
+    public function resizeMFit($width = 0, $height = 0, $limit = null)
     {
         return $this->resize('mfit', $width, $height, $limit);
     }
@@ -243,37 +243,37 @@ class Maker extends Object implements MakerInterface
      * @param int $height
      * @return $this
      */
-    public function fitMaxSize($width = 0, $height = 0)
-    {
-        return $this->resizeFitMin($width, $height);
-    }
-
-    /**
-     * @param int $width
-     * @param int $height
-     * @return $this
-     */
     public function fitMinSize($width = 0, $height = 0)
     {
-        return $this->resizeFitMax($width, $height);
+        return $this->resizeMFit($width, $height);
+    }
+
+    /**
+     * @param int $width
+     * @param int $height
+     * @return $this
+     */
+    public function fitMaxSize($width = 0, $height = 0)
+    {
+        return $this->resizeLFit($width, $height);
     }
 
     /**
      * @param int $width
      * @return $this
      */
-    public function fitWidth($width)
+    public function fitByWidth($width)
     {
-        return $this->resizeFitMax($width);
+        return $this->resizeLFit($width);
     }
 
     /**
      * @param int $height
      * @return $this
      */
-    public function fitHeight($height)
+    public function fitByHeight($height)
     {
-        return $this->resizeFitMax(0, $height);
+        return $this->resizeLFit(0, $height);
     }
 
     /**
