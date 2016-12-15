@@ -25,11 +25,11 @@ $url = $maker->getStyleUrl($styleName);
 ### 获取参数方式地址
 
 ```php
-$url = $maker->fitWidth($width)->getUrl();
+$url = $maker->fitByWidth($width)->getUrl();
 ```
 or 
 ```php
-$url = (string)$maker->fitWidth($width);
+$url = (string)$maker->fitByWidth($width);
 ```
 
 ## 参数方式预定义方法列表
