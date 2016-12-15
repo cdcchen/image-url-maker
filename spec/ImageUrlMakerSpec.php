@@ -3,11 +3,11 @@
 namespace spec\cdcchen\oss;
 
 use cdcchen\oss\base\ImageFormat;
-use cdcchen\oss\Maker;
+use cdcchen\oss\ImageUrlMaker;
 use PhpSpec\ObjectBehavior;
 use RangeException;
 
-class MakerSpec extends ObjectBehavior
+class ImageUrlMakerSpec extends ObjectBehavior
 {
     const IMAGE_URL = 'example.jpg';
     const DELIMITER = '?x-oss-process=';
@@ -15,7 +15,7 @@ class MakerSpec extends ObjectBehavior
     public function it_is_initializable()
     {
         $this->beConstructedWith(self::IMAGE_URL);
-        $this->shouldHaveType(Maker::class);
+        $this->shouldHaveType(ImageUrlMaker::class);
     }
 
     public function it_get_image_info()
@@ -116,7 +116,7 @@ class MakerSpec extends ObjectBehavior
     {
         $this->beConstructedWith(self::IMAGE_URL);
         $excepted = self::IMAGE_URL . self::DELIMITER . 'image/crop,w_100,h_200,x_10,y_20,g_center';
-        $this->crop(100, 200, 10, 20, Maker::POSITION_CENTER)->getUrl()->shouldBeLike($excepted);
+        $this->crop(100, 200, 10, 20, ImageUrlMaker::POSITION_CENTER)->getUrl()->shouldBeLike($excepted);
     }
 
     public function it_is_index_corp_x_throw()
@@ -302,7 +302,7 @@ class MakerSpec extends ObjectBehavior
     public function not_it_is_test()
     {
         echo PHP_EOL;
-        $maker = new Maker('http://ydbcdn.oss-cn-hangzhou.aliyuncs.com/5.jpg');
+        $maker = new ImageUrlMaker('http://ydbcdn.oss-cn-hangzhou.aliyuncs.com/5.jpg');
         echo $maker->fitByWidth(200)->getUrl(), PHP_EOL;
         echo $maker->fitByHeight(200)->getUrl(), PHP_EOL;
         echo $maker->circle(200)->getUrl(), PHP_EOL;

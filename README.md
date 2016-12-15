@@ -1,9 +1,9 @@
-# Cloud Image Url Maker
+# OSS Image Url Maker
 
 ## composer 安装
 
 ```
-composer require cdcchen/image-url-maker:^1.0.0
+composer require cdcchen/oss-image-url-maker:^1.0.0
 ```
 
 ## 使用教程
@@ -11,9 +11,9 @@ composer require cdcchen/image-url-maker:^1.0.0
 ### 实例化 `Maker`
 
 ```php
-use ImageUrlMaker\oss\Maker;
+use cdcchen\oss\ImageUrlMaker;
 
-$maker = new Maker($url);
+$maker = new ImageUrlMaker($url);
 ```
 
 ### 获取预定义样式地址
@@ -36,15 +36,15 @@ $url = (string)$maker->fitWidth($width);
 
 缩放
 * `resize($mode = null, $width = 0, $height = 0, $limit = null, $color = null)`
-* `resizeFitMax($width = 0, $height = 0, $limit = null)`
-* `resizeFitMin($width = 0, $height = 0, $limit = null)`
+* `resizeMFit($width = 0, $height = 0, $limit = null)`
+* `resizeLFit($width = 0, $height = 0, $limit = null)`
 * `resizeFill($width = 0, $height = 0, $limit = null)`
 * `resizePad($width = 0, $height = 0, $limit = null, $color = null)`
 * `resizeFixed($width = 0, $height = 0, $limit = null)`
 * `fitMaxSize($width = 0, $height = 0)`
 * `fitMinSize($width = 0, $height = 0)`
-* `fitWidth($width)`
-* `fitHeight($height)`
+* `fitByWidth($width)`
+* `fitByHeight($height)`
 * `fixedSize($width = 0, $height = 0)`
 * `fixedWidth($width)`
 * `fixedHeight($height)`

@@ -16,10 +16,10 @@ use cdcchen\oss\base\ParamsTrait;
 
 
 /**
- * Class Maker
+ * Class ImageUrlMaker
  * @package cdcchen\oss\oss
  */
-class Maker extends Object implements MakerInterface
+class ImageUrlMaker extends Object implements MakerInterface
 {
     use ParamsTrait, BoolToStringTrait, ImageMakerTrait;
 
