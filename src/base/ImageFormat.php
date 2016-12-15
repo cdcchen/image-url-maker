@@ -6,12 +6,12 @@
  * Time: 15:31
  */
 
-namespace ImageUrlMaker\base;
+namespace cdcchen\oss\base;
 
 
 /**
  * Class ImageFormat
- * @package ImageUrlMaker\base
+ * @package cdcchen\oss\base
  */
 class ImageFormat
 {

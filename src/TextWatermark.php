@@ -6,12 +6,12 @@
  * Time: 14:32
  */
 
-namespace ImageUrlMaker\oss;
+namespace cdcchen\oss;
 
 
 /**
  * Class TextWatermark
- * @package ImageUrlMaker\oss
+ * @package cdcchen\oss
  */
 class TextWatermark extends Watermark
 {

@@ -6,7 +6,7 @@
  * Time: 14:46
  */
 
-namespace ImageUrlMaker\base;
+namespace cdcchen\oss\base;
 
 
 /**

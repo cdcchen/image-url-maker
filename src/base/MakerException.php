@@ -6,12 +6,12 @@
  * Time: 20:01
  */
 
-namespace ImageUrlMaker\base;
+namespace cdcchen\oss\base;
 
 
 /**
  * Class MakerException
- * @package ImageUrlMaker\base
+ * @package cdcchen\oss\base
  */
 class MakerException extends \Exception
 {

@@ -1,21 +1,14 @@
 {
-  "name": "cdcchen/image-url-maker",
-  "description": "Cloud image url maker",
-  "keywords": [
-    "image",
-    "cloud image",
-    "url maker",
-    "oss",
-    "upyun",
-    "qiniu"
-  ],
-  "homepage": "https://github.com/cdcchen/image-url-maker",
+  "name": "cdcchen/oss-image-url-maker",
+  "description": "oss image url maker",
+  "keywords": ["image", "url maker", "oss"],
+  "homepage": "https://github.com/cdcchen/oss-image-url-maker",
   "time": "2016-12-13 19:17:01",
   "license": "BSD-4-Clause",
   "support": {
-    "issues": "https://github.com/cdcchen/image-url-maker/issues",
-    "wiki": "https://github.com/cdcchen/image-url-maker/wiki",
-    "source": "https://github.com/cdcchen/image-url-maker"
+    "issues": "https://github.com/cdcchen/oss-image-url-maker/issues",
+    "wiki": "https://github.com/cdcchen/oss-image-url-maker/wiki",
+    "source": "https://github.com/cdcchen/oss-image-url-maker"
   },
   "authors": [
     {
@@ -35,7 +28,7 @@
   },
   "autoload": {
     "psr-4": {
-      "ImageUrlMaker\\": "src/"
+      "cdcchen\\oss\\": "src/"
     }
   },
   "extra": {

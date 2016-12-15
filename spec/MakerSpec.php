@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\ImageUrlMaker\oss;
+namespace spec\cdcchen\oss;
 
-use ImageUrlMaker\base\ImageFormat;
-use ImageUrlMaker\oss\Maker;
+use cdcchen\oss\base\ImageFormat;
+use cdcchen\oss\Maker;
 use PhpSpec\ObjectBehavior;
 use RangeException;
 

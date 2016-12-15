@@ -6,12 +6,12 @@
  * Time: 19:59
  */
 
-namespace ImageUrlMaker\base;
+namespace cdcchen\oss\base;
 
 
 /**
  * Interface MakerInterface
- * @package ImageUrlMaker\base
+ * @package cdcchen\oss\base
  */
 interface MakerInterface
 {

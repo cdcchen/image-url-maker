@@ -6,18 +6,18 @@
  * Time: 13:46
  */
 
-namespace ImageUrlMaker\oss;
+namespace cdcchen\oss;
 
-use ImageUrlMaker\base\BoolToStringTrait;
-use ImageUrlMaker\base\ImageFormat;
-use ImageUrlMaker\base\MakerInterface;
-use ImageUrlMaker\base\Object;
-use ImageUrlMaker\base\ParamsTrait;
+use cdcchen\oss\base\BoolToStringTrait;
+use cdcchen\oss\base\ImageFormat;
+use cdcchen\oss\base\MakerInterface;
+use cdcchen\oss\base\Object;
+use cdcchen\oss\base\ParamsTrait;
 
 
 /**
  * Class Maker
- * @package ImageUrlMaker\oss
+ * @package cdcchen\oss\oss
  */
 class Maker extends Object implements MakerInterface
 {

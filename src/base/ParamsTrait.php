@@ -6,12 +6,12 @@
  * Time: 14:44
  */
 
-namespace ImageUrlMaker\base;
+namespace cdcchen\oss\base;
 
 
 /**
  * Class ParamsTrait
- * @package ImageUrlMaker\base
+ * @package cdcchen\oss\base
  */
 trait ParamsTrait
 {

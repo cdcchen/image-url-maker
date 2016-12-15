@@ -6,19 +6,19 @@
  * Time: 13:09
  */
 
-namespace ImageUrlMaker\upyun;
+namespace cdcchen\oss;
 
 
 /**
  * Class ImageMakerTrait
- * @package cdcchen\upyun
+ * @package cdcchen\oss
  */
 trait ImageMakerTrait
 {
     public static function rangeValidate($name, $value, $start, $end)
     {
-        if ($start < $start || $value > $end) {
-            throw new \InvalidArgumentException("{$name}: {$value} is not between {$start} and {$end}.");
+        if ($value < $start || $value > $end) {
+            throw new \RangeException("{$name}: {$value} is not between {$start} and {$end}.");
         }
     }
 

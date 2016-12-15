@@ -6,7 +6,7 @@
  * Time: 09:59
  */
 
-namespace ImageUrlMaker\oss;
+namespace cdcchen\oss;
 
 
 interface EndPoint

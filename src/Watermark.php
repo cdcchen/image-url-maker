@@ -6,16 +6,16 @@
  * Time: 14:35
  */
 
-namespace ImageUrlMaker\oss;
+namespace cdcchen\oss;
 
-use ImageUrlMaker\base\BoolToStringTrait;
-use ImageUrlMaker\base\Object;
-use ImageUrlMaker\base\ParamsTrait;
+use cdcchen\oss\base\BoolToStringTrait;
+use cdcchen\oss\base\Object;
+use cdcchen\oss\base\ParamsTrait;
 
 
 /**
  * Class Watermark
- * @package ImageUrlMaker\oss
+ * @package cdcchen\oss
  */
 abstract class Watermark extends Object
 {
