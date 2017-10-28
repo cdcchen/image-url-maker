@@ -1,6 +1,0 @@
-bootstrap: spec/bootstrap.php
-suites:
-    oss_suite:
-        namespace: cdcchen\oss
-        psr4_prefix: cdcchen\oss
-
