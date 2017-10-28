@@ -11,7 +11,6 @@ namespace cdcchen\oss;
 use cdcchen\oss\base\BoolToStringTrait;
 use cdcchen\oss\base\ImageFormat;
 use cdcchen\oss\base\MakerInterface;
-use cdcchen\oss\base\Object;
 use cdcchen\oss\base\ParamsTrait;
 
 
@@ -19,7 +18,7 @@ use cdcchen\oss\base\ParamsTrait;
  * Class ImageUrlMaker
  * @package cdcchen\oss\oss
  */
-class ImageUrlMaker extends Object implements MakerInterface
+class ImageUrlMaker implements MakerInterface
 {
     use ParamsTrait, BoolToStringTrait, ImageMakerTrait;
 
@@ -395,7 +394,7 @@ class ImageUrlMaker extends Object implements MakerInterface
      * @param int $value
      * @return $this
      */
-    public function autoOrient($value = 1)
+    public function autoOrient($value)
     {
         static::rangeValidate('Value', $value, 0, 1);
         return $this->setParam('auto-orient', $value);

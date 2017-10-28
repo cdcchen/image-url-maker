@@ -9,7 +9,6 @@
 namespace cdcchen\oss;
 
 use cdcchen\oss\base\BoolToStringTrait;
-use cdcchen\oss\base\Object;
 use cdcchen\oss\base\ParamsTrait;
 
 
@@ -17,7 +16,7 @@ use cdcchen\oss\base\ParamsTrait;
  * Class Watermark
  * @package cdcchen\oss
  */
-abstract class Watermark extends Object
+abstract class Watermark
 {
     use ParamsTrait, BoolToStringTrait, ImageMakerTrait;
 
