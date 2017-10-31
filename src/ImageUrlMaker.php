@@ -43,7 +43,7 @@ class ImageUrlMaker implements MakerInterface
     /**
      * @var string
      */
-    protected $styleDelimiter = '!';
+    protected $styleDelimiter = '?x-oss-process=style/';
     /**
      * @var string
      */

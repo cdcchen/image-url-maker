@@ -20,7 +20,7 @@ class ImageFormat
     const WEBP = 'webp';
     const BMP  = 'bmp';
     const GIF  = 'gif';
-    const SRC  = 'src';
+    const TIFF  = 'tiff';
 
     /**
      * @return array
@@ -33,7 +33,7 @@ class ImageFormat
             self::GIF,
             self::JPG,
             self::WEBP,
-            self::SRC,
+            self::TIFF,
         ];
     }
 }
